@@ -2,8 +2,7 @@
 <suite name="CBADemoProject" verbose="1" >
   <test name="Banking App test" >
     <classes>
-      <class name="com.cba.testCases.TC_RegisterOnline_001"/>
-      
+      <class name="com.cba.testCases.TC_TravelMoney"/>  
     </classes>
  </test>
 </suite>
