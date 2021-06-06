@@ -25,6 +25,10 @@ public class ReadConfig {
 		return url;
 	}
 	
+	public String getTravelUrl() {
+		String url=prop.getProperty("travelUrl");
+		return url;
+	}
 	public String getChromePath() {
 		String path=prop.getProperty("chromePath");
 		return path;

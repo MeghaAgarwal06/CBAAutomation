@@ -19,7 +19,9 @@ public class TravelMoneyPage {
 	@FindBy(xpath="//a[@class='button_secondary']")
 	 List<WebElement> BtnsOptions;
 	
-	@FindBy(xpath="//a[@href=\"https://www.commbank.com.au/digital/TravelMoneyCardApply\"]")
+	
+	
+	@FindBy(partialLinkText="Order online")
 	WebElement BtnLogOn;
 	
 	

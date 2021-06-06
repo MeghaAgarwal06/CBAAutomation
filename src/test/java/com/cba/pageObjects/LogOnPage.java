@@ -19,8 +19,11 @@ public class LogOnPage {
 	@FindBy(xpath="//input[@id='txtMyClientNumber_field']")
 	 List<WebElement> ClientNumber;
 	
+	
 	@FindBy(id="txtMyPassword_field")
 	 List<WebElement> password;
+	
+	
 	
 	
 	public boolean checkClientNumberFieldPresent() {

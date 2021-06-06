@@ -17,7 +17,7 @@ public class TravelPage {
 	}
 
 	
-	
+	//defining the Elements on the Page
 	@FindBy(xpath="//a[@title='Discover more']")
 	WebElement BtnDiscoverMore;
 	

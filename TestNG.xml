@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="CBADemoProject" verbose="1" >
-  <test name="Banking App test" >
+<suite name="CBADemoProject">
+  <test name="CBA Regsistration and Travel Money test" >
     <classes>
       <class name="com.cba.testCases.TC_TravelMoney"/>  
+      <class name="com.cba.testCases.TC_RegisterOnline_001"/>  
     </classes>
  </test>
 </suite>

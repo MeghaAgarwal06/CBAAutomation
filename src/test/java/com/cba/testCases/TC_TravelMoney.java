@@ -5,7 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,16 +23,17 @@ public class TC_TravelMoney extends BaseClass {
 	@Test
 	public void testTravelMoney()  {
 		//Navigate to https://www.commbank.com.au/travel.html
-		driver.get(baseUrl);
-		 driver.manage().window().maximize();
+		driver.get(travelUrl);
+		driver.manage().window().maximize();
 		
 		TravelPage travel = new TravelPage(driver);
-		//Click on discover more
+		//Click on discover more on Travel Money Option listed on Page
 		travel.clickDiscoverMore();
 		
 		TravelMoneyPage travelPage = new TravelMoneyPage(driver);
 		List<String> btns= travelPage.checkOptions();
-		//Check the 2 option available
+		
+		//Check the 2 currency convertor options 
 		ArrayList<String> expectedArr = new ArrayList<String>(2);
 		expectedArr.add("Foreign exchange calculator");
 		expectedArr.add("Exchange rates");
@@ -41,18 +44,23 @@ public class TC_TravelMoney extends BaseClass {
 		  }
 		
 
-		 
+		 //Select register Online
 		  travelPage.clickRegisterOnline(); 
+		  
 		  // Switch to new window opened
 		  for(String winHandle : driver.getWindowHandles()){
 		      driver.switchTo().window(winHandle);
 		  }
 		  
+		  //Select apply online option
 		  TravelMoneyCardApply applyOnline = new TravelMoneyCardApply(driver);
 		  applyOnline.clickOnlineOption();
-		  driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		  
+	
 		 
 		  LogOnPage logOn = new LogOnPage(driver);
+		//  WebElement ClientNumber1;
+		 // ClientNumber1=wait.until(ExpectedConditions.visibilityOf(logOn.getClientNumber()));
 		  
 		  boolean expected =logOn.checkClientNumberFieldPresent();
 		  Assert.assertEquals(true, expected);

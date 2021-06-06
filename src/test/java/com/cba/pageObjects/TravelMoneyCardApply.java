@@ -15,7 +15,9 @@ public class TravelMoneyCardApply {
 		ldriver=rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
-
+	
+	
+	//defining the Elements & methods on the Page
 	
 	
 	@FindBy(className="select")

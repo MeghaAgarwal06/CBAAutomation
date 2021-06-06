@@ -1,5 +1,7 @@
 package com.cba.testCases;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -11,6 +13,7 @@ public class BaseClass {
 
 	ReadConfig readConfig = new ReadConfig();
 	public String baseUrl=readConfig.getBaseUrl();
+	public String travelUrl=readConfig.getTravelUrl();
 	public String username=readConfig.getUsername();
 	public String password = readConfig.getPassword();
 	public String reenterpw= readConfig.getRenenterPw();
@@ -23,10 +26,12 @@ public class BaseClass {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", readConfig.getChromePath());
 		driver = new ChromeDriver();
+		//setting wait timeout as 5 seconds 
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
 	
-	/*
-	 * @AfterClass public void tearDown() { driver.quit(); }
-	 */
+	  @AfterClass public void tearDown() { driver.quit(); }
+	 
+	 
 }
